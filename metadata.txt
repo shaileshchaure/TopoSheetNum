@@ -9,7 +9,7 @@
 [general]
 name=TopoSheet Numbers Calculator
 qgisMinimumVersion=2.0
-description=Calcuate SOI toposheet numbers from the features
+description=Calculate SOI toposheet numbers from the features
 version=1.0
 author=Shailesh Chaure
 email=sk_chaure@rediffmail.com
