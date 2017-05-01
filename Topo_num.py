@@ -274,7 +274,7 @@ def CalculateSheet(sheetTypeID,s_lats,s_longs,Xg,Yg):
 					Sheetnum=CalcWGS84_Sheetno(Blt_deg,Blt_min,Blt_sec,Lln_deg,Lln_min,Lln_sec)
                 points = [QgsPoint(xmin,ymin),QgsPoint(xmin,ymax),QgsPoint(xmax,ymax),QgsPoint(xmax,ymin),QgsPoint(xmin,ymin)]
                 poly.setGeometry(QgsGeometry.fromPolygon([points]))
-                poly.setAttributes([id,Sheetnum,False])
+                poly.setAttributes([id,Sheetnum,0])
                 id=id+1
                 pr.addFeatures([poly])
                 longx=longx+sheetw	
@@ -537,7 +537,7 @@ class TopoNum:
                     for a in layer.getFeatures():
                         if a.geometry().intersects(f.geometry()):
                             n=n+1
-                            updateMap[a.id()] = { fieldIdx:True }
+                            updateMap[a.id()] = { fieldIdx:1 }
                 pr.changeAttributeValues(updateMap)
                 
                 # set the layer symbology
